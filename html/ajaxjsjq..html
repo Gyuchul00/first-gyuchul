@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            //window.addEventListener('load',()=>{
+                $(()=>{
+                //const btjObj = document.querySelector('button')
+                const bjObj = $('button')
+
+                //const pObj = document.querySelector('p')
+                const pObj = $('p')
+                //--버튼클릭 되었을때 할일 STRART--
+                //btjObj.addEventListener('click',()=>{
+                    bjObj.click(()=>{
+                    // Create an XMLHttpRequest object
+                    // const xhttp = new XMLHttpRequest();
+
+                    // // Define a callback function
+                    // xhttp.addEventListener('load',(e)=>{
+                    //     pObj.innerHTML =e.target.responseText;
+                    // })
+                    // // Send a request
+                    // xhttp.open("POST", "http://localhost:8888/back/signup");
+                    
+                    // //요청전달데이터를 form전송형태로 전달하려면 Contenttype설정이 필요합니다
+                    // xhttp.setRequestHeader("Content-type",
+                    //                         "application/x-www-form-urlencoded")
+                    // xhttp.send("id=abc&pwd=p1&name=1");
+
+
+                    $.ajax({
+                    url:'http://localhost:8888/back/signup',
+                    method:'post',
+                    data:"id=abc&pwd=p1&name=1",
+                    success:(responseData)=>{
+                        pObj.html(responseData)
+                    },
+                    error:(jqXhr,status)=>{
+                        alert(`status: ${status},jqxhr.status:${jqXhr.statusCode}`)
+                    }
+
+                })
+                })
+                //--버튼클릭 되었을때 할일 END--
+
+                
+            })
+
+        </script>
+    </head>
+    <body>
+        <div>DIV영역</div>
+        <p>P단락</p>
+        <button>클릭</button>
+    </body>
+</html>

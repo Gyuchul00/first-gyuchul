@@ -1,0 +1,32 @@
+section{
+    background-color: peachpuff !important;
+}
+div.productlist{
+    background-color: peachpuff;
+    width:100%;
+}
+div.productlist>div.product{
+    display : block; float : left; width: 20%;
+}
+div.productlist>div.product>ul{
+    width:100%;
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+div.productlist>div.product>ul>li{
+    margin:0px;
+    width:100%;
+    text-align: center;
+}
+
+div.productlist>div.product>ul>li>img{
+    margin:0px;
+    width:90%;
+}
+/* div.productlist>div.product>ul>li>img{
+    vertical-align: middle;
+    display: flex;
+    width:20%;
+    margin-bottom: 0;
+} */

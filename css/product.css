@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+div.product_view>div.product_view_pic{
+    width: 10.9%;
+    float:left;
+}
+div.product_view>div.product_view_detail{
+    width: 55.45%;
+    float:right;
+}
+div.product_view>div.product_view_pic img{
+    width: 100%;
+    min-height: 212px;
+    max-width: 439px;
+}

@@ -1,0 +1,11 @@
+body{
+    font-family: "Nanum Pen Script";
+}
+
+form>label{
+    display: block;
+}
+
+form>button:last-child{
+    display: none;
+}

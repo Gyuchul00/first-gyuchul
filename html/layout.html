@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <link rel="stylesheet" href="../css/layout.css">
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/layoutjq.js"></script>
+    <!-- <script>
+
+        window.addEventListener('load',()=>{
+                const logObj = document.querySelector('li.login')
+                const sectionObj = document.querySelector('section')
+                const signupObj = document.querySelector('li.signup')
+                //--로긍인버튼클릭 되었을때 할일 STRART--
+                logObj.addEventListener('click',()=>{
+                    // Create an XMLHttpRequest object
+                    const xhttp = new XMLHttpRequest();
+
+                    // Define a callback function
+                    xhttp.addEventListener('load',(e)=>{
+                        sectionObj.innerHTML =e.target.responseText;
+                    })
+                    // Send a request
+                    xhttp.open("get", "login.html");
+                    
+                    //요청전달데이터를 form전송형태로 전달하려면 Contenttype설정이 필요합니다
+                    xhttp.setRequestHeader("Content-type",
+                                            "application/x-www-form-urlencoded")
+                    xhttp.send();
+                })
+                //--로그인버튼클릭 되었을때 할일 END--
+
+                signupObj.addEventListener('click',()=>{
+                // Create an XMLHttpRequest object
+                const xhttp = new XMLHttpRequest();
+
+                // Define a callback function
+                xhttp.addEventListener('load',(e)=>{
+                    sectionObj.innerHTML =e.target.responseText;
+                })
+                // Send a request
+                xhttp.open("get", "signup.html");
+                
+                //요청전달데이터를 form전송형태로 전달하려면 Contenttype설정이 필요합니다
+                xhttp.setRequestHeader("Content-type",
+                                        "application/x-www-form-urlencoded")
+                xhttp.send();
+            })
+            //--로그인버튼클릭 되었을때 할일 END--
+
+            })
+            
+            </script> -->
+
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a class="logo" href="#">스타벅스코리아</a>
+        </h1>
+        <nav>
+            <ul>
+                <li class="login">로그인</li>
+                <!-- <li><a class="login">로그인</a></li> -->
+                <li><a>로그아웃</a></li>
+                <li class="signup">가입</li>
+                <!-- <li><a href="./signup.html">가입</a></li> -->
+
+                <li><a class="pdlist">상품목록</a></li>
+                <li><a>장바구니목록</a></li>
+                <li><a>주문목록</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+    <section>
+        <div>
+            <article >드라이브스루매장</article>
+            <article  >리저브매장</article>
+        </div>
+        <aside>
+            <ul>
+                <li>2023 SUMMER EVENT 안내</li>
+                <li>단체및기업구매</li>
+            </ul>
+        </aside>
+    </section>
+
+    <footer>
+        <ul class="copy_menu">
+            <li>사업자등록번호 : 201-81-21515</li>
+            <li>주식회사 에스씨케이컴퍼니 대표이사 : 손정현</li> <!-- 221205 수정 -->
+            <li>TEL : 1522-3232</li>
+            <li>개인정보 책임자 : 이찬우</li><!-- 20230201  수정 (이현수 > 이찬우) -->
+        </ul>
+        <span class="en">ⓒ 2023 Starbucks Coffee Company. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

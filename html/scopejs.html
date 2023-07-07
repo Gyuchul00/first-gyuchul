@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var a ; //변수선언
+            console.log(a, window.a)
+
+            var a = 1; //변수 덮어쓰기
+
+            //let aa;
+            
+
+            let aa =1 ;
+            console.log(aa);
+            //alert('경고'); //window는 생략가능함.
+        
+
+            for(var i = 0; i<5; i++){} //window객체영역에 변수선언
+            console.log(i,window.i)
+
+            var f1 = function(){
+                var fv = 1; //f1함수영역에 변수선언
+                console.log(fv)
+
+                c = 'hello' //함수내에서 var없이 변수 선언시 window객채영역에 변수선언
+                console.log('함수내부에서 c값:' + c)
+
+                let fvv = 1;
+                console.log(fvv)
+            }
+            f1();
+            b = true;
+            console.log('함수외부에서 c값:' +c,window.c)
+
+            var f2  = function(){
+                console.log(this)
+            }
+            f2();
+
+            var f3 = ()=>{
+                console.log(this)
+            }
+            f3();
+
+            var f4 = function(a){
+                a();
+            }
+
+            f4(f2);
+            f4(f3);
+
+            let f5 = function(a){
+                a();
+            }
+            f5(function(){console.log(this)})
+            f5(()=>{
+                console.log
+            })
+         
+        </script>
+    </head>
+</html>

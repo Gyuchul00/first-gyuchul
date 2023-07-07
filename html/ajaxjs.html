@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            window.addEventListener('load',()=>{
+                const btjObj = document.querySelector('button')
+                const pObj = document.querySelector('p')
+
+                //--버튼클릭 되었을때 할일 STRART--
+                btjObj.addEventListener('click',()=>{
+                    // Create an XMLHttpRequest object
+                    const xhttp = new XMLHttpRequest();
+
+                    // Define a callback function
+                    xhttp.addEventListener('load',(e)=>{
+                        pObj.innerHTML =e.target.responseText;
+                    })
+                    // Send a request
+                    xhttp.open("POST", "http://localhost:8888/back/signup");
+                    
+                    //요청전달데이터를 form전송형태로 전달하려면 Contenttype설정이 필요합니다
+                    xhttp.setRequestHeader("Content-type",
+                                            "application/x-www-form-urlencoded")
+                    xhttp.send("id=abc&pwd=p1&name=1");
+                })
+                //--버튼클릭 되었을때 할일 END--
+            })
+        </script>
+    </head>
+    <body>
+        <div>DIV영역</div>
+        <p>P단락</p>
+        <button>클릭</button>
+    </body>
+</html>

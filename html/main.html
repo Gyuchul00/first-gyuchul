@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax</title>
+
+    <script>
+      window.addEventListener("load", () => {
+        let btnObj = document.querySelector("button");
+        let pObj = document.querySelector("p");
+
+        // 버튼이 클릭되었을때 할 일 start
+
+        // Define a callback function
+        btnObj.addEventListener("click", () => {
+          // Create an XMLHttpRequest object
+          const xhttp = new XMLHttpRequest();
+
+          xhttp.addEventListener("load", (e) => {
+            pObj.innerHTML = e.target.responseText;
+          });
+
+          // Send a request
+          //   xhttp.open("GET", "login.html");
+          xhttp.open("POST", "http://localhost:8888/back/signup");
+          xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhttp.send("id=suwan&pwd=p1&name=1");
+        });
+
+        // 버튼이 클릭되었을때 할 일 end
+      });
+    </script>
+  </head>
+  <body>
+    <div>DIV 영역</div>
+    <p>p 단락</p>
+    <button>클릭</button>
+  </body>
+</html>

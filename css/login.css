@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+form.login>input[name=id],form.login>input[name=pwd]{
+    width: 100%;
+}
+form.login>span{
+    background-color: yellow;
+}
+
+@media  screen and (max-width:500px){
+    form.lgoin>span{
+        display:block;
+    }
+}

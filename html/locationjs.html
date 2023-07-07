@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test(obj){
+            //    console.log(obj.innerHTML)
+            if(obj.innerHTML == '네이버'){
+                location.href = "http://www.naver.com"
+            }else if(obj.innerHTML == '다음'){
+                location.href = "http://www.daum.net"
+            }
+            }
+
+            // function test2(url){
+            //     location.href = url;
+            // }
+            let test2 = (url)=>{ //이름없는 변수를 만들어 test2에 담아둠
+                location.href = url;
+            }
+
+            window.addEventListener('load',()=>{
+                const btNaverObj = document.querySelector('button.naver')
+                const btDaumObj = document.querySelector('button.daum')
+
+                btNaverObj.addEventListener('click',(e)=>{
+                    //test(e.target);
+                    test2('http://www.naver.com')
+                })
+                btDaumObj.addEventListener('click',(e)=>{
+                    // test(e.target);
+                    test2('http://www.daum.net')
+                })
+                //클릭되었을때 함수를  사용하고 싶을경우 => 안에값만 받을경우 test
+            })
+        </script>
+    </head>
+    <body>
+        <button class = "naver">네이버</button>
+        <button class = "daum">다음</button>
+    </body>
+</html>
